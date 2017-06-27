@@ -23,9 +23,27 @@ yo loopback-ssl
  * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
-## License
+# Contributing
 
-MIT © [Siddhartha Lahiri](https://github.com/yantrashala)
+ - Want to contribute? Great! Please check this [guide](https://github.com/yantrashala/generator-loopback-ssl/blob/master/CONTRIBUTING.md).
+ - Fork it ( https://github.com/yantrashala/loopback-ssl/fork )
+ - Create your feature branch (git checkout -b new-feature)
+ - Commit your changes (git commit -am 'Add some feature')
+ - Push to the branch (git push origin new-feature)
+ - Create new Pull Request
+
+# See Also
+
+ - [Self Signed Certificates - Example][self_signed]
+
+# License
+
+  [MIT](./LICENSE).
+
+ [loopback]: http://loopback.io
+ [loopback-ssl]: https://www.npmjs.com/package/loopback-ssl
+ [trusted_peer]: https://github.com/coolaj86/nodejs-ssl-trusted-peer-example
+ [self_signed]: https://github.com/coolaj86/nodejs-self-signed-certificate-example
 
 
 [npm-image]: https://badge.fury.io/js/generator-loopback-ssl.svg

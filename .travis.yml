@@ -4,4 +4,13 @@ node_js:
   - 7
   - 6
   - 4
-after_script: 'cat ./coverage/lcov.info | coveralls'
+before_script:
+  - npm install -g gulp
+  - npm install -g eslint
+  - npm install -g eslint-config-xo-space
+install:
+  - npm install
+script:
+  - npm run test
+after_success:
+  - gulp nsp
