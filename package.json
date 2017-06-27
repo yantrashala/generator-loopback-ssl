@@ -1,0 +1,60 @@
+{
+  "name": "generator-loopback-ssl",
+  "version": "0.0.1",
+  "description": "Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)",
+  "homepage": "https://github.com/yantrashala/generator-loopback-ssl",
+  "author": {
+    "name": "Siddhartha Lahiri",
+    "email": "slahiri@sapient.com",
+    "url": "https://github.com/yantrashala"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "loopback",
+    "ssl",
+    "loopback-ssl",
+    "pem",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "yeoman-test": "1.6.0",
+    "yeoman-assert": "3.0.0",
+    "coveralls": "2.13.1",
+    "nsp": "2.6.3",
+    "eslint": "4.1.1",
+    "eslint-config-xo-space": "0.16.0",
+    "jest": "20.0.4",
+    "jest-cli": "20.0.4",
+    "codacy-coverage": "2.0.2",
+    "gulp": "3.9.1",
+    "gulp-nsp": "2.4.2",
+    "gulp-shrinkwrap": "2.0.3",
+    "shrinkwrap": "0.4.0",
+    "tape": "4.7.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "1.1.1",
+    "chalk": "1.1.3",
+    "yosay": "2.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "https://github.com/yantrashala/generator-loopback-ssl.git",
+  "license": "MIT"
+}

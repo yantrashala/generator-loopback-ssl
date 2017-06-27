@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Siddhartha Lahiri",
+      "authorEmail": "slahiri@sapient.com",
+      "authorUrl": "https://github.com/yantrashala"
+    }
+  }
+}
