@@ -26,7 +26,7 @@ yo loopback-ssl
 # Contributing
 
  - Want to contribute? Great! Please check this [guide](https://github.com/yantrashala/generator-loopback-ssl/blob/master/CONTRIBUTING.md).
- - Fork it ( https://github.com/yantrashala/loopback-ssl/fork )
+ - Fork it ( https://github.com/yantrashala/generator-loopback-ssl/fork )
  - Create your feature branch (git checkout -b new-feature)
  - Commit your changes (git commit -am 'Add some feature')
  - Push to the branch (git push origin new-feature)
