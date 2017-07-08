@@ -3,16 +3,12 @@
 const Generator = require('yeoman-generator');
 const debug = require('debug')('loopback-ssl:index');
 const yosay = require('yosay');
-// Const chalk = require('chalk');
+const chalk = require('chalk');
 const _util = require('../../lib/utility.js');
-// Const parseAuthor = require('parse-author');
-// const githubUsername = require('github-username');
 const path = require('path');
-// Const askName = require('inquirer-npm-name');
-// const pkg = require('../../package.json');
 const _ = require('lodash');
 const extend = _.merge;
-// Const pkgJson = require('../../package.json');
+const emoji = require('node-emoji');
 
 module.exports = class extends Generator {
   initializing() {
@@ -55,7 +51,7 @@ module.exports = class extends Generator {
     }, {
       type: 'list',
       name: 'httpMode',
-      message: 'Select HTTP mode',
+      message: 'Select loopback-ssl configuration option',
       choices: [{
         value: 'option1',
         name: 'Option 1: HTTP : Default loopback configuration'
@@ -77,7 +73,8 @@ module.exports = class extends Generator {
       type: 'input',
       name: 'certificatePath',
       message: 'Provide certificate path',
-      default: '/certificate/path/'
+      default: '/certificate/path/',
+      store: true
     }, {
       when: function (response) {
         return ((response.httpMode !== 'option1') &&
@@ -86,7 +83,8 @@ module.exports = class extends Generator {
       type: 'input',
       name: 'privateKey',
       message: 'Private Key',
-      default: 'key.pem'
+      default: 'key.pem',
+      store: true
     }, {
       when: function (response) {
         return ((response.httpMode !== 'option1') &&
@@ -95,7 +93,8 @@ module.exports = class extends Generator {
       type: 'input',
       name: 'certificate',
       message: 'Certificate',
-      default: 'cert.pem'
+      default: 'cert.pem',
+      store: true
     }, {
       when: function (response) {
         return ((response.httpMode !== 'option1') &&
@@ -115,33 +114,46 @@ module.exports = class extends Generator {
       type: 'input',
       name: 'clientCertificate',
       message: 'Client Certificate',
-      default: 'client-cert.pem'
+      default: 'client-cert.pem',
+      store: true
     }, {
       type: 'confirm',
       name: 'confirmSetup',
-      message: 'Do you want to continue with the above settings?',
+      message: emoji.emojify(':warning: ') +
+        chalk.yellow(' Installing loopback-ssl will replace the existing server.js') +
+        '\n  Do you want to continue with the above settings?',
       default: true
     }];
 
     return this.prompt(prompts).then(props => {
       this.props = extend(this.props, props);
-      debug(this.props);
+      debug('this.props=', this.props);
     });
   }
 
   prompting() {
     _util.validateTarget(this.pkg);
-
     console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
-
     return this._askForModuleName()
       .then(this._askFor.bind(this));
-  }
+  };
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
-  }
+    if (this.props.confirmSetup === true) {
+    }
+  };
+
+  installing() {
+    if (this.props.confirmSetup === true) {
+      this.npmInstall();
+    }
+  };
+
+  end() {
+    if (this.props.confirmSetup === true) {
+      this.log(chalk.green.bold('  Thanks for using loopback-ssl generator!'));
+    } else {
+      this.log(chalk.yellow.bold('  loopback-ssl generator did not run'));
+    }
+  };
 };
