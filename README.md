@@ -10,7 +10,25 @@ npm install -g yo
 npm install -g generator-loopback-ssl
 ```
 
-Then generate your new project:
+Install loopback
+
+```bash
+
+# install loopback-cli
+npm install -g loopback-cli
+
+# create project directory
+mkdir <app-name>
+cd <app-name>
+
+# create loopback application
+lb
+# ? What's the name of your application? <app-name>
+# ? Which version of LoopBack would you like to use? 3.x (current)
+# ? What kind of application do you have in mind? notes
+```
+
+Install loopback-ssl
 
 ```bash
 yo loopback-ssl
