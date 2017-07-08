@@ -5,12 +5,9 @@ node_js:
   - 6
   - 4
 before_install:
-  - npm install -g gulp
   - npm install -g eslint
   - npm install -g eslint-config-xo-space
 install:
   - npm install
 script:
   - npm run test
-after_success:
-  - gulp nsp
