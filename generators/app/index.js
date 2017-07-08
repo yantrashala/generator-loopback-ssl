@@ -9,6 +9,7 @@ const path = require('path');
 const _ = require('lodash');
 const extend = _.merge;
 const emoji = require('node-emoji');
+const lbPkg = require('../../package.json');
 
 module.exports = class extends Generator {
   initializing() {
@@ -136,18 +137,27 @@ module.exports = class extends Generator {
     console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
     return this._askForModuleName()
       .then(this._askFor.bind(this));
-  };
+  }
 
   writing() {
+    const currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {});
+    const lbSSLPkg = {
+      dependencies: {
+        'loopback-ssl': lbPkg.peerDependencies['loopback-ssl']
+      }
+    };
+    const pkg = extend(lbSSLPkg, currentPkg);
+    debug('Updated Package: ', pkg);
     if (this.props.confirmSetup === true) {
+      this.fs.writeJSON(this.destinationPath('package.json'), pkg);
     }
-  };
+  }
 
   installing() {
     if (this.props.confirmSetup === true) {
       this.npmInstall();
     }
-  };
+  }
 
   end() {
     if (this.props.confirmSetup === true) {
@@ -155,5 +165,5 @@ module.exports = class extends Generator {
     } else {
       this.log(chalk.yellow.bold('  loopback-ssl generator did not run'));
     }
-  };
+  }
 };

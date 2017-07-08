@@ -25,6 +25,9 @@
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
   },
+  "peerDependencies": {
+    "loopback-ssl": "^1.0.1"
+  },
   "dependencies": {
     "chalk": "^2.0.1",
     "debug": "^2.6.8",
