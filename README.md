@@ -16,12 +16,11 @@ Then generate your new project:
 yo loopback-ssl
 ```
 
-## Getting To Know Yeoman
+## Getting To loopback-ssl
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+ * Node module to enable HTTPS/SSL in a loopback application with simple configurations.
+ * The module also enables trusted peer authentication.
+ * Feel free to [learn more about loopback-ssl](https://github.com/yantrashala/loopback-ssl/blob/master/README.md).
 
 # Contributing
 
