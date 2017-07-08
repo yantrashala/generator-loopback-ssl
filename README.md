@@ -1,5 +1,9 @@
-# generator-loopback-ssl [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)
+# generator-loopback-ssl
+
+Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+
 
 ## Installation
 
