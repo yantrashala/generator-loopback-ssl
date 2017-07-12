@@ -1,0 +1,15 @@
+Description:
+    Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)
+
+Options:
+    option1: HTTP - Default loopback configuration
+    option2: HTTPS - Loading certificates from files
+    option3: HTTPS -  Loading certificates from files & Mutual SSL authentication
+
+Example:
+    yo loopback-ssl
+
+    This will update (server directory):
+        server.js: Updated server.js including loopback-ssl configuration
+        config.json: Certificate configuration for looopback-ssl
+        package.json: Development packages installed by npm.

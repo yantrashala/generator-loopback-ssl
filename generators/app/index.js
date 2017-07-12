@@ -11,6 +11,12 @@ const extend = _.merge;
 const timestamp = require('timestamp');
 
 module.exports = class extends Generator {
+
+  constructor(args, options) {
+    super(args, options);
+  };
+
+
   initializing() {
     this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
     this.props = {
@@ -24,13 +30,13 @@ module.exports = class extends Generator {
   _askForModuleName() {
     if (this.pkg.name || this.options.name) {
       this.props.name = this.pkg.name || _.kebabCase(this.options.name);
-      debug('Package Name;', this.pkg.name);
+      debug('Project Name;', this.pkg.name);
       return Promise.resolve();
     }
 
     return ({
       name: 'name',
-      message: 'Module Name',
+      message: 'Project Name',
       default: path.basename(process.cwd()),
       filter: _.kebabCase,
       validate(str) {
@@ -45,13 +51,13 @@ module.exports = class extends Generator {
     const prompts = [{
       type: 'list',
       name: 'loopbackVersion',
-      message: 'Select loopback version',
+      message: 'LoopBack version',
       choices: ['2.x', '3.x'],
       default: '2.x'
     }, {
       type: 'input',
       name: 'configFile',
-      message: 'Loopback configuration file to update (server folder):',
+      message: 'Loopback configuration file to update (server folder)',
       default: 'config.json'
     }, {
       type: 'list',
@@ -73,7 +79,7 @@ module.exports = class extends Generator {
       },
       type: 'input',
       name: 'certificatePath',
-      message: 'Provide certificate path',
+      message: 'Certificate path (absolute)',
       default: '/server/certs/'
     }, {
       when: function (response) {
@@ -118,7 +124,7 @@ module.exports = class extends Generator {
     console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
     return this._askForModuleName()
       .then(this._askFor.bind(this));
-  }
+  };
 
   writing() {
     if (this.props.confirmSetup === true) {
