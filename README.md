@@ -37,6 +37,8 @@ Install loopback-ssl
 ```bash
 yo loopback-ssl
 ```
+### Example
+[sample-image]][sample-url]
 
 ## Getting To loopback-ssl
 
@@ -66,7 +68,8 @@ yo loopback-ssl
  [trusted_peer]: https://github.com/coolaj86/nodejs-ssl-trusted-peer-example
  [self_signed]: https://github.com/coolaj86/nodejs-self-signed-certificate-example
 
-
+[sample-image]: asset/generator.png
+[sample-url]: https://npmjs.org/package/generator-loopback-ssl
 [npm-image]: https://badge.fury.io/js/generator-loopback-ssl.svg
 [npm-url]: https://npmjs.org/package/generator-loopback-ssl
 [travis-image]: https://travis-ci.org/yantrashala/generator-loopback-ssl.svg?branch=master
