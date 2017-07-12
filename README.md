@@ -38,7 +38,7 @@ Install loopback-ssl
 yo loopback-ssl
 ```
 ### Example
-[sample-image]][sample-url]
+[generator-loopback-ssl](./asset/generator.png)
 
 ## Getting To loopback-ssl
 
@@ -61,20 +61,19 @@ yo loopback-ssl
 
 # License
 
-  [MIT](./LICENSE).
+ [MIT](./LICENSE).
 
  [loopback]: http://loopback.io
  [loopback-ssl]: https://www.npmjs.com/package/loopback-ssl
  [trusted_peer]: https://github.com/coolaj86/nodejs-ssl-trusted-peer-example
  [self_signed]: https://github.com/coolaj86/nodejs-self-signed-certificate-example
 
-[sample-image]: asset/generator.png
-[sample-url]: https://npmjs.org/package/generator-loopback-ssl
-[npm-image]: https://badge.fury.io/js/generator-loopback-ssl.svg
-[npm-url]: https://npmjs.org/package/generator-loopback-ssl
-[travis-image]: https://travis-ci.org/yantrashala/generator-loopback-ssl.svg?branch=master
-[travis-url]: https://travis-ci.org/yantrashala/generator-loopback-ssl
-[daviddm-image]: https://david-dm.org/yantrashala/generator-loopback-ssl.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/yantrashala/generator-loopback-ssl
-[coveralls-image]: https://coveralls.io/repos/yantrashala/generator-loopback-ssl/badge.svg
-[coveralls-url]: https://coveralls.io/r/yantrashala/generator-loopback-ssl
+
+ [npm-image]: https://badge.fury.io/js/generator-loopback-ssl.svg
+ [npm-url]: https://npmjs.org/package/generator-loopback-ssl
+ [travis-image]: https://travis-ci.org/yantrashala/generator-loopback-ssl.svg?branch=master
+ [travis-url]: https://travis-ci.org/yantrashala/generator-loopback-ssl
+ [daviddm-image]: https://david-dm.org/yantrashala/generator-loopback-ssl.svg?theme=shields.io
+ [daviddm-url]: https://david-dm.org/yantrashala/generator-loopback-ssl
+ [coveralls-image]: https://coveralls.io/repos/yantrashala/generator-loopback-ssl/badge.svg
+ [coveralls-url]: https://coveralls.io/r/yantrashala/generator-loopback-ssl
