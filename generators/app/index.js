@@ -11,7 +11,6 @@ const extend = _.merge;
 const timestamp = require('timestamp');
 
 module.exports = class extends Generator {
-
   initializing() {
     this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
     this.props = {
@@ -31,7 +30,7 @@ module.exports = class extends Generator {
 
     return ({
       name: 'name',
-      message: 'Project Name',
+      message: 'Project Name:',
       default: path.basename(process.cwd()),
       filter: _.kebabCase,
       validate(str) {
@@ -46,7 +45,7 @@ module.exports = class extends Generator {
     const prompts = [{
       type: 'list',
       name: 'loopbackVersion',
-      message: 'LoopBack version',
+      message: 'LoopBack version:',
       choices: ['2.x', '3.x'],
       default: '2.x'
     }, {
@@ -57,7 +56,7 @@ module.exports = class extends Generator {
     }, {
       type: 'list',
       name: 'httpMode',
-      message: 'Select loopback-ssl configuration option',
+      message: 'Select loopback-ssl configuration option:',
       choices: [{
         value: 'option1',
         name: 'Option 1: HTTP : Default loopback configuration'
@@ -74,15 +73,15 @@ module.exports = class extends Generator {
       },
       type: 'input',
       name: 'certificatePath',
-      message: 'Certificate path (absolute)',
-      default: '/server/certs/'
+      message: 'Certificate path:',
+      default: this.destinationPath('./certs/')
     }, {
       when: function (response) {
         return (response.httpMode !== 'option1');
       },
       type: 'input',
       name: 'privateKey',
-      message: 'Private Key',
+      message: 'Private Key:',
       default: 'key.pem'
     }, {
       when: function (response) {
@@ -90,8 +89,45 @@ module.exports = class extends Generator {
       },
       type: 'input',
       name: 'certificate',
-      message: 'Certificate',
+      message: 'Certificate:',
       default: 'cert.pem'
+    }, {
+      when: function (response) {
+        return (response.httpMode !== 'option1');
+      },
+      type: 'confirm',
+      name: 'genCerts',
+      message: 'Do you want to generate certificates?',
+      default: true
+    }, {
+      when: function (response) {
+        return (response.httpMode !== 'option1' && response.genCerts === true);
+      },
+      type: 'input',
+      name: 'certDuration',
+      message: 'Validity of self signed certificate (whole number between 0 and 365):',
+      default: 365,
+      validate: function (input) {
+        if (isNaN(input)) {
+          return 'Only whole numbers allowed between 1 and 365';
+        }
+        var num = parseInt(input, 0);
+
+        if (num % 1 !== 0) {
+          return 'Only whole numbers allowed between 1 and 365';
+        } else if (num < 1 || num > 365) {
+          return 'Only whole numbers allowed between 1 and 365';
+        }
+        return true;
+      }
+    }, {
+      when: function (response) {
+        return (response.httpMode !== 'option1' && response.genCerts === true);
+      },
+      type: 'input',
+      name: 'certHost',
+      message: 'Hostname for the application:',
+      default: 'localhost'
     }, {
       when: function (response) {
         return (response.httpMode === 'option3');
@@ -131,6 +167,14 @@ module.exports = class extends Generator {
       const currentConfig = this.fs.readJSON(this.destinationPath('server/' + this.props.configFile), {});
       const targetConfig = _util.addLoopbackSSLConfig(currentConfig, this.props);
       debug('Target Config: ', targetConfig);
+
+      if (this.props.genCerts) {
+        _util.genCerts(this.props.certificatePath,
+          this.props.privateKey,
+          this.props.certificate,
+          this.props.certDuration,
+          this.props.certHost);
+      }
 
       this.fs.copy(
         this.destinationPath('server/server.js'),

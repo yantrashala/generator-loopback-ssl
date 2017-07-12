@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path');
-var assert = require('yeoman-assert');
+var yassert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-loopback-ssl:app', () => {
@@ -21,7 +21,7 @@ describe('generator-loopback-ssl:app', () => {
   });
 
   it('creates files', () => {
-    assert.file([
+    yassert.file([
       'dummyfile.txt'
     ]);
   });

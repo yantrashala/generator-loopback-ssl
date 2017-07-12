@@ -30,8 +30,12 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "debug": "^2.6.8",
+    "fs-extra": "^3.0.1",
+    "fs-extra-promise": "^1.0.1",
     "lodash": "^4.17.4",
     "node-emoji": "^1.7.0",
+    "pem": "^1.9.7",
+    "pem-promise": "^1.0.0",
     "timestamp": "0.0.1",
     "yeoman-generator": "^1.0.0",
     "yosay": "^2.0.0"
@@ -46,6 +50,9 @@
   },
   "eslintConfig": {
     "extends": "xo-space",
+    "rules": {
+      "max-params": ["error", 5]
+    },
     "env": {
       "jest": true,
       "node": true
