@@ -206,5 +206,7 @@ module.exports = class extends Generator {
     } else {
       this.log(chalk.yellow.bold('  loopback-ssl generator did not run'));
     }
+
+    debug(this.props);
   }
 };

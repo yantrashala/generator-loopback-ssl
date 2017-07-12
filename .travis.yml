@@ -1,16 +1,21 @@
 language: node_js
 node_js:
   - 8
-  - 7
   - 6
   - 4
 before_install:
   - npm install -g eslint
   - npm install -g eslint-config-xo-space
+
 install:
   - npm install
+
 script:
   - npm run test
+
+after_script:
+  - 'cat ./coverage/lcov.info | coveralls'
+
 branches:
   only:
   - master
