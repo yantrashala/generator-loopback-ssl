@@ -1,5 +1,9 @@
-# generator-loopback-ssl [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)
+# generator-loopback-ssl
+
+Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+
 
 ## Installation
 
@@ -10,18 +14,37 @@ npm install -g yo
 npm install -g generator-loopback-ssl
 ```
 
-Then generate your new project:
+Install loopback
+
+```bash
+
+# install loopback-cli
+npm install -g loopback-cli
+
+# create project directory
+mkdir <app-name>
+cd <app-name>
+
+# create loopback application
+lb
+# ? What's the name of your application? <app-name>
+# ? Which version of LoopBack would you like to use? 3.x (current)
+# ? What kind of application do you have in mind? notes
+```
+
+Install loopback-ssl
 
 ```bash
 yo loopback-ssl
 ```
+### Example
+![generator-loopback-ssl](./asset/generator.png)
 
-## Getting To Know Yeoman
+## Getting To loopback-ssl
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+ * Node module to enable HTTPS/SSL in a loopback application with simple configurations.
+ * The module also enables trusted peer authentication.
+ * Feel free to [learn more about loopback-ssl](https://github.com/yantrashala/loopback-ssl/blob/master/README.md).
 
 # Contributing
 
@@ -38,7 +61,7 @@ yo loopback-ssl
 
 # License
 
-  [MIT](./LICENSE).
+ [MIT](./LICENSE).
 
  [loopback]: http://loopback.io
  [loopback-ssl]: https://www.npmjs.com/package/loopback-ssl
@@ -46,11 +69,11 @@ yo loopback-ssl
  [self_signed]: https://github.com/coolaj86/nodejs-self-signed-certificate-example
 
 
-[npm-image]: https://badge.fury.io/js/generator-loopback-ssl.svg
-[npm-url]: https://npmjs.org/package/generator-loopback-ssl
-[travis-image]: https://travis-ci.org/yantrashala/generator-loopback-ssl.svg?branch=master
-[travis-url]: https://travis-ci.org/yantrashala/generator-loopback-ssl
-[daviddm-image]: https://david-dm.org/yantrashala/generator-loopback-ssl.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/yantrashala/generator-loopback-ssl
-[coveralls-image]: https://coveralls.io/repos/yantrashala/generator-loopback-ssl/badge.svg
-[coveralls-url]: https://coveralls.io/r/yantrashala/generator-loopback-ssl
+ [npm-image]: https://badge.fury.io/js/generator-loopback-ssl.svg
+ [npm-url]: https://npmjs.org/package/generator-loopback-ssl
+ [travis-image]: https://travis-ci.org/yantrashala/generator-loopback-ssl.svg?branch=master
+ [travis-url]: https://travis-ci.org/yantrashala/generator-loopback-ssl
+ [daviddm-image]: https://david-dm.org/yantrashala/generator-loopback-ssl.svg?theme=shields.io
+ [daviddm-url]: https://david-dm.org/yantrashala/generator-loopback-ssl
+ [coveralls-image]: https://coveralls.io/repos/yantrashala/generator-loopback-ssl/badge.svg
+ [coveralls-url]: https://coveralls.io/r/yantrashala/generator-loopback-ssl
