@@ -12,11 +12,6 @@ const timestamp = require('timestamp');
 
 module.exports = class extends Generator {
 
-  constructor(args, options) {
-    super(args, options);
-  };
-
-
   initializing() {
     this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
     this.props = {
@@ -124,7 +119,7 @@ module.exports = class extends Generator {
     console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
     return this._askForModuleName()
       .then(this._askFor.bind(this));
-  };
+  }
 
   writing() {
     if (this.props.confirmSetup === true) {
