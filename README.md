@@ -38,7 +38,7 @@ Install loopback-ssl
 yo loopback-ssl
 ```
 ### Example
-[generator-loopback-ssl](./asset/generator.png)
+![generator-loopback-ssl](./asset/generator.png)
 
 ## Getting To loopback-ssl
 
