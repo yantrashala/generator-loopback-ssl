@@ -152,7 +152,7 @@ module.exports = class extends Generator {
 
   prompting() {
     _util.validateTargetPackage(this.pkg);
-    console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
+    //console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
     return this._askForModuleName()
       .then(this._askFor.bind(this));
   }
