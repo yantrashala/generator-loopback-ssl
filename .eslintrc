@@ -1,0 +1,6 @@
+{
+  "extends": "xo-space",
+  "rules": {
+    "max-params": ["error", 5]
+  }
+}
