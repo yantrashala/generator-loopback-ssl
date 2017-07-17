@@ -43,7 +43,11 @@
     "yosay": "^2.0.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["json", "lcov", "text"]
   },
   "scripts": {
     "prepublish": "nsp check",
