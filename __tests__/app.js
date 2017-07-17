@@ -81,11 +81,6 @@ describe('generator-loopback-ssl:app', function () {
       it('config.json: {httpMode=false}', () => {
         yassert.jsonFileContent('server/config.json', {httpMode: false});
       });
-
-      it('cert.pem-exists', () => {
-        debug(tempDir + '/certs/cert.pem');
-        yassert.file([tempDir + '/certs/cert.pem']);
-      });
     });
   });
 });

@@ -2,7 +2,7 @@
 
 const Generator = require('yeoman-generator');
 const debug = require('debug')('generator-loopback-ssl:index');
-const yosay = require('yosay');
+// Const yosay = require('yosay');
 const chalk = require('chalk');
 const _util = require('../../lib/utility.js');
 const path = require('path');
@@ -152,7 +152,7 @@ module.exports = class extends Generator {
 
   prompting() {
     _util.validateTargetPackage(this.pkg);
-    //console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
+    // Console.log(yosay('Hello, and welcome to loopback-ssl generator!'));
     return this._askForModuleName()
       .then(this._askFor.bind(this));
   }
