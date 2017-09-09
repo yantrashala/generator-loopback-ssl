@@ -1,9 +1,9 @@
 {
   "name": "generator-loopback-ssl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Configuration generator for node module loopback-ssl (https://www.npmjs.com/package/loopback-ssl)",
   "homepage": "https://github.com/yantrashala/generator-loopback-ssl",
-  "author": "Siddhartha Lahiri <slahiri@sapient.com> (https://github.com/yantrashala)",
+  "author": "Siddhartha Lahiri <siddhartha.lahiri@gmail.com> (https://github.com/yantrashala)",
   "files": [
     "generators"
   ],
